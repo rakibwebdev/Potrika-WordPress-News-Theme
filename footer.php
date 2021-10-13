@@ -14,7 +14,7 @@
 	<footer id="colophon" class="site-footer">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12 text-center">
 					<div class="site-info">
 						<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'potrika' ) ); ?>">
 							<?php

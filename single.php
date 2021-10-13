@@ -14,7 +14,7 @@ get_header();
 
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-7">
 					<?php
 					while ( have_posts() ) :
 						the_post();
@@ -36,11 +36,13 @@ get_header();
 					endwhile; // End of the loop.
 					?>
 				</div>
+				<div class="col-md-5">
+					<?php get_sidebar(); ?>
+				</div>
 			</div>
 		</div>
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
