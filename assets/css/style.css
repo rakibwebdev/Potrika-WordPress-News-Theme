@@ -55,6 +55,7 @@ html {
  */
 body {
 	margin: 0;
+	background-color: #f0f1f4;
 }
 
 /**
@@ -447,9 +448,6 @@ big {
 
 /* Elements
 --------------------------------------------- */
-body {
-	background: #fff;
-}
 
 hr {
 	background-color: #ccc;
@@ -620,13 +618,6 @@ textarea {
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-
-/* Navigation
---------------------------------------------- */
-.main-navigation {
-	display: block;
-	width: 100%;
-}
 
 .main-navigation ul {
 	display: none;
@@ -953,11 +944,21 @@ ul{
 	margin-left: 20px;
 }
 .site-header{
-	padding: 25px 0px;
-	box-shadow: 0 3px 2px -2px #ebebeb;
+	padding-top: 25px;
+	background-color: #fff;
+	margin-bottom: 25px;
 }
 .site-header .row{
 	align-items: center;
+}
+.site-header .row > div{
+	padding: 0px;
+}
+.site-header .site-branding{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	padding-bottom: 15px;
 }
 .site-header .site-branding .site-title,
 .site-header .site-branding .site-description{
@@ -967,25 +968,38 @@ ul{
 .site-header .site-branding .site-title a{
 	text-decoration: none;
 }
+.site-header .header-bottom{
+	padding-bottom: 25px;
+	padding-top: 25px;
+	border-top: 1px solid #ececec;
+	border-bottom: 1px solid #ececec;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.site-header .main-navigation{
+	margin-right: 20px;
+}
 .site-header .main-navigation .menu .nav-menu .page_item a{
-	text-transform: capitalize;
+	text-transform: uppercase;
+	font-weight: 600;
 }
 .site-header .main-navigation .menu .nav-menu .page_item:not(:last-child){
-	padding-right: 10px;
+	padding-right: 15px;
 }
 .site-header .main-navigation .menu .nav-menu .page_item_has_children .children{
-	max-width: 350px;
+	max-width: 340px;
 	display: flex;
     flex-direction: column;
 	padding: 15px;
 	background-color: #fff;
+	padding-right: 0px;
 }
 .site-header .main-navigation .menu .nav-menu .page_item_has_children .children .page_item:not(:last-child){
 	padding-bottom: 8px;
 }
 .site-header .main-navigation .menu .nav-menu .page_item_has_children .children .page_item_has_children:hover .children{
-	left: 70px;
-    top: 15px;
+	left: 200px;
 }
 .site-main{
 	padding: 50px 0px;
@@ -1003,8 +1017,25 @@ aside ul li:hover{
 	margin-left: 3px;
 }
 .post-container {
-    padding: 30px;
-    box-shadow: 0 3px 5px -2px #ebebeb;
     margin-bottom: 20px;
-    border-radius: 3px;
+    border-radius: 6px;
+	background-color: #fff;
+}
+.post-container article{
+	padding: 30px;
+}
+.post-container .post-thumbnail-container{
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+	border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+.post-container .post-thumbnail-container .post-thumbnail img{
+	width: 100%;
+	height: 100%;
+	transition: 100ms;
+}
+.post-container .post-thumbnail-container:hover .post-thumbnail img{
+	transform: scale(1.1);
 }

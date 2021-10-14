@@ -26,9 +26,9 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'potrika' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-12">
 					<div class="site-branding">
 						<?php
 						the_custom_logo();
@@ -48,18 +48,26 @@
 						<?php endif; ?>
 					</div><!-- .site-branding -->
 				</div>
-				<div class="col-md-8">
-					<nav id="site-navigation" class="main-navigation">
-						<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'potrika' ); ?></button>
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'menu-1',
-								'menu_id'        => 'primary-menu',
-							)
-						);
-						?>
-					</nav><!-- #site-navigation -->
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="header-bottom">
+						<nav id="site-navigation" class="main-navigation">
+								<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'potrika' ); ?></button>
+								<?php
+								wp_nav_menu(
+									array(
+										'theme_location' => 'menu-1',
+										'menu_id'        => 'primary-menu',
+									)
+								);
+								?>
+						</nav><!-- #site-navigation -->
+						<div class="search-wrapper">
+							<?php get_search_form(); ?>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 		</div>
