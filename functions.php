@@ -7,9 +7,9 @@
  * @package Potrika
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'POTRIKA_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'POTRIKA_VERSION', '1.0.3' );
 }
 
 if ( ! function_exists( 'potrika_setup' ) ) :
@@ -167,4 +167,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Load initialization file.
  */
 require get_template_directory() . '/inc/init.php';
+/**
+ * Trim post title
+ */
+
+add_filter( 'the_title', 'potrika_post_title' );
+
+function potrika_post_title( $title )
+{
+    // limit to ten words
+    return wp_trim_words( $title, 7, '' );
+}
+
 

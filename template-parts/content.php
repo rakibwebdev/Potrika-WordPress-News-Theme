@@ -11,7 +11,7 @@
 if (is_singular()){
 	?>
 	<div class="single-page-post-container">
-		<div class="post-thumbnail">
+		<div class="post-thumbnail-container">
 			<?php potrika_post_thumbnail(); ?>
 		</div>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -82,7 +82,8 @@ if (is_singular()){
 				if ( is_singular() ) :
 					the_title( '<h1 class="entry-title">', '</h1>' );
 				else :
-					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+					potrika_post_title(the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' ));
+					//the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 				endif;
 				
 				if ( 'post' === get_post_type() ) :
@@ -100,7 +101,9 @@ if (is_singular()){
 
 			<div class="entry-content">
 				<?php
-				the_content( 'Read More',false );
+				$excerpt = get_the_excerpt(); 
+				$excerpt = substr( $excerpt, 0, 160 );
+				echo $excerpt;
 				?>
 			</div><!-- .entry-content -->
 
