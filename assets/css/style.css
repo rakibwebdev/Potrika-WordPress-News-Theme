@@ -507,17 +507,17 @@ table {
 /* Links
 --------------------------------------------- */
 a {
-	color: #14279B;
+	color: #404040;
 }
 
 a:visited {
-	color: #3D56B2;
+	color: #404040;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: #5C7AEA;
+	color: #404040;
 }
 
 a:focus {
@@ -527,6 +527,7 @@ a:focus {
 a:hover,
 a:active {
 	outline: 0;
+	color: #eb1c23;
 }
 
 /* Forms
@@ -535,11 +536,9 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
 	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
+	background: #eb1c23;
+	color: #fff;
 	line-height: 1;
 	padding: 0.6em 1em 0.4em;
 }
@@ -657,6 +656,17 @@ textarea {
 
 .main-navigation li {
 	position: relative;
+}
+.site-header .main-navigation .nav-menu > li:not(:last-child)::before {
+    position: absolute;
+    right: 0px;
+    content: '';
+    width: 1px;
+    height: 12px;
+    background: #ececec;
+    top: 0;
+    bottom: 0;
+    margin: auto;
 }
 
 .main-navigation a {
@@ -964,13 +974,15 @@ ul{
 .site-header .site-branding .site-description{
 	padding: 0px;
 	margin: 0px;
+	width: 80%;
+	text-align: center;
 }
 .site-header .site-branding .site-title a{
 	text-decoration: none;
 }
 .site-header .header-bottom{
-	padding-bottom: 25px;
-	padding-top: 25px;
+	padding-bottom: 20px;
+	padding-top: 20px;
 	border-top: 1px solid #ececec;
 	border-bottom: 1px solid #ececec;
 	display: flex;
@@ -982,24 +994,31 @@ ul{
 }
 .site-header .main-navigation .nav-menu li a{
 	text-transform: uppercase;
-	font-weight: 600;
+	font-weight: 700;
+    font-size: 13px;
 }
 .site-header .main-navigation .nav-menu li:not(:last-child){
-	padding-right: 15px;
+	padding-right: 10px;
+    margin-right: 10px;
 }
 .site-header .main-navigation .nav-menu li ul{
-	max-width: 340px;
+	max-width: 230px;
 	display: flex;
     flex-direction: column;
 	padding: 15px;
 	background-color: #fff;
 	padding-right: 0px;
 }
-.site-header .main-navigation .nav-menu li ul li:not(:last-child){
+.site-header .main-navigation .nav-menu li ul li{
 	padding-bottom: 8px;
+	padding-top: 8px;
+}
+.site-header .main-navigation .nav-menu li ul li:not(:last-child){
+    border-bottom: 1px solid #ececec;
+	font-size: 12px;
 }
 .site-header .main-navigation .nav-menu li ul li:hover ul{
-	left: 200px;
+	left: 215px;
 }
 .site-main{
 	padding: 50px 0px;
@@ -1028,15 +1047,15 @@ aside ul li:hover{
 }
 .post-container .post-thumbnail-container{
 	width: 100%;
-	height: 250px;
+	height: 200px;
 	overflow: hidden;
 	border-top-right-radius: 6px;
     border-top-left-radius: 6px;
 }
 .post-container .post-thumbnail-container .post-thumbnail img{
 	width: 100%;
-	height: 100%;
-	transition: 100ms;
+	height: auto;
+	transition: 1s;
 }
 .post-container .post-thumbnail-container:hover .post-thumbnail img{
 	transform: scale(1.1);

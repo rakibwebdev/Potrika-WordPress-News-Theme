@@ -30,21 +30,23 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="site-branding">
-						<?php
-						the_custom_logo();
-						if ( is_front_page() && is_home() ) :
-							?>
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-							<?php
-						else :
-							?>
-							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-							<?php
-						endif;
-						$potrika_description = get_bloginfo( 'description', 'display' );
-						if ( $potrika_description || is_customize_preview() ) :
-							?>
-							<p class="site-description"><?php echo $potrika_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+					<?php
+
+						if (function_exists('the_custom_logo')) : ?>
+							<a class="logo" href="<?php echo esc_url(home_url('/')); ?>">
+								<?php
+
+								if (has_custom_logo()) :
+									the_custom_logo();
+
+								?>
+							</a>
+							<?php else : ?>
+								<h1 class="site-title">
+									<a rel="home" href=" <?php echo esc_url(home_url('/')); ?> "> <?php bloginfo('name'); ?> </a>
+								</h1>
+								<p class="site-desc"><?php echo esc_html(get_bloginfo('description')); ?></p>
+							<?php endif; ?>
 						<?php endif; ?>
 					</div><!-- .site-branding -->
 				</div>
