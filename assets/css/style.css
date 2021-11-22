@@ -1068,7 +1068,7 @@ aside ul li:hover{
     margin-bottom: 12px;
 }
 .entry-meta{
-	color: #14279B;
+	color: #404040;
 	font-size: 14px;
     font-weight: 400;
 }
@@ -1112,4 +1112,35 @@ article.page{
 	padding: 30px;
 	border-radius: 6px;
 	background-color: #fff;
+}
+.wp-block-search .wp-block-search__button{
+	background-color: #eb1c23;
+	color: #ffffff;
+	border: 1px solid #eb1c23;
+	border-radius: 6px;
+}
+.wp-block-search .wp-block-search__input{
+	border: 1px solid #ececec;
+}
+.wp-block-search .wp-block-search__label{
+	display: none;
+}
+.posted-on{
+	padding-right: 15px;
+}
+.posted-on:hover i{
+	color: #eb1c23;
+}
+.byline:hover i{
+	color: #eb1c23;
+}
+.pagination li a{
+	background-color: blue;
+	border: none;
+}
+.pagination li.active a:hover, .pagination li:hover a:hover {
+    background: #eb1c23;
+}
+.pagination .active a{
+	background-color: #eb1c23 !important;
 }

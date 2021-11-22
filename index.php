@@ -50,7 +50,7 @@ get_header();
 						<?php
 						
 
-						the_posts_navigation();
+						get_template_part( 'template-parts/pagination', 'style1' );
 
 					else :
 
